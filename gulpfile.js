@@ -67,7 +67,7 @@ gulp.task('build:styles:local', function() {
 // Concatenate library scripts, uglify, output to the appropriate location.
 // include jQuery first
 gulp.task('build:scripts', function() {
-    return gulp.src([paths.jsFiles + '/lib/jquery-3.3.1.min.js', paths.jsFilesGlob])
+    return gulp.src([paths.jsFiles + '/lib/jquery-3.4.1.min.js',paths.jsFiles + '/lib/vue.min.js', paths.jsFilesGlob])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.jekyllJsFiles))
