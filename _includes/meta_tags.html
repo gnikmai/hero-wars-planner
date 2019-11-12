@@ -1,0 +1,80 @@
+{%- capture pageURL -%}{{ page.url | replace:'index.html','' | absolute_url }}{%- endcapture -%}
+
+{%- capture metaTitle -%}
+    {%- if page.title -%}
+        {{ page.title }}
+    {%- else -%}
+        {{ site.meta_title }}
+    {%- endif -%}
+{%- endcapture -%}
+{%- assign metaTitle = metaTitle | strip_html | normalize_whitespace -%}
+
+{%- capture metaDescription -%}
+    {%- if page.meta_description -%}
+        {{ page.meta_description }}
+    {%- else -%}
+        {{ site.meta_description }}
+    {%- endif -%}
+{%- endcapture -%}
+{%- assign metaDescription = metaDescription | strip_html | normalize_whitespace | truncate: 160 -%}
+
+{%- capture metaImage -%}
+    {%- if page.meta_image -%}
+        {{ page.meta_image | absolute_url }}
+    {%- else -%}
+        {{ site.meta_image | absolute_url }}
+    {%- endif -%}
+{%- endcapture -%}
+
+<!-- _includes/partials/meta_tags.html -->
+
+    {% comment %}
+        Browser tags
+    {%- endcomment -%}
+    <title>{{ metaTitle }}</title>
+    <meta name="description" content="{{ metaDescription }}">
+
+    {% comment %}
+        Open Graph
+    {%- endcomment -%}
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ metaTitle }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    <meta property="og:url" content="{{ pageURL }}">
+    <meta property="og:image" content="{{ metaImage }}">
+
+    {% comment %}
+        Twitter specific
+    {%- endcomment -%}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ metaTitle }}">
+    <meta name="twitter:description" content="{{ metaDescription }}">
+    <meta name="twitter:image" content="{{ metaImage }}">
+
+    {% comment %}
+        Optional tags
+
+        Facebook:
+            - https://developers.facebook.com/docs/sharing/webmasters
+
+        <meta property="fb:app_id" content="">
+
+        Twitter:
+            - https://dev.twitter.com/cards/overview
+            - https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup.html
+
+        <meta name="twitter:image:alt" content="Used with summary, summary_large_image, player cards">
+        <meta name="twitter:site" content="@site_username">
+        <meta name="twitter:creator" content="@creator_username">
+        <meta name="twitter:label1" value="Label 1">
+        <meta name="twitter:data1" value="value 1">
+    {%- endcomment -%}
+
+    {% comment %}
+        Canonical tag prevents content duplication for SEO
+    {%- endcomment -%}
+    <link rel="canonical" href="{{ pageURL }}">
+
+    <!-- / _includes/partials/meta_tags.html -->
+

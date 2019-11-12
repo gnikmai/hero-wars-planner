@@ -1,0 +1,33 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "description": "Project description",
+  "author": "Codrin Pavel (https://codrin.eu/)",
+  "contributors": [
+    "Codrin Pavel <zerospree@yahoo.com>"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "bundler": "gulp bundler",
+    "start": "gulp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^2.2.1"
+  },
+  "license": "ISC"
+}

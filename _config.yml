@@ -1,0 +1,26 @@
+# Meta tags settings
+name: '' # Used for Facebook meta og:site_name
+meta_title: '' # Global fallback meta title
+meta_description: '' # Global fallback meta description
+meta_image: '' # Global fallback for meta image
+
+# Build settings
+baseurl: "" # The subfolder where the site will live, no trailing slash. Ex: "investors/reports/2019"
+url: "" # The base url, no trailing slash. Ex: "https://www.example.com"
+
+is_production: true # Leave unchanged. Used for production build.
+
+permalink: /:title/
+markdown: kramdown
+
+testdata: ''
+
+# Exclude files and folders from build
+# Note: Jekyll automatically excludes directories prefixed by and underscore. Ex: `_dirname`.
+exclude: ["node_modules",
+          "Gemfile",
+          "Gemfile.lock",
+          "gulpfile.js",
+          "package.json",
+          "package-lock.json",
+          "README.md"]

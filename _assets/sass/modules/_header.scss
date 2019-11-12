@@ -1,0 +1,37 @@
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #E1E1E1;
+
+  .hamburger-button {
+
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    textarea {
+      resize: none;
+      overflow: hidden;
+      width: 112px;
+      height: 28px;
+      line-height: 1.4;
+      padding: 4px;
+      outline: none;
+    }
+
+    .button {
+      margin-left: 10px;
+    }
+  }
+}

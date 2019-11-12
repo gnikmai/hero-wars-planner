@@ -1,0 +1,7 @@
+assets
+node_modules
+.DS_Store
+.jekyll-metadata
+.sass-cache
+Gemfile.lock
+Thumbs.db

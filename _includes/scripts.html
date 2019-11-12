@@ -1,0 +1,15 @@
+<!-- _includes/partials/scripts.html -->
+
+{% if site.is_production %}
+  <script src="{{ "/assets/js/main.min.js" | relative_url }}"></script>
+{% else %}
+  <script src="{{ "/assets/js/lib/vue.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/lib/jquery-3.4.1.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/map.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/utils.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/app.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/localstorage.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/hamburger.js" | relative_url }}"></script>
+{% endif %}
+
+<!-- / _includes/partials/scripts.html -->

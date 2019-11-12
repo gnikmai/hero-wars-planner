@@ -1,0 +1,43 @@
+html {
+  color: $black;
+  margin: 0 0 40px;
+  font: 400 13px/1.4 'Open Sans', arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+button,
+.button {
+  &:hover {
+    opacity: .8;
+  }
+}
+
+label,
+button,
+input {
+  cursor: pointer;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+h4,
+h3 {
+  display: block;
+  width: 100%;
+  margin: 40px 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+}

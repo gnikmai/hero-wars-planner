@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{% raw %}
+<div id="app" class="war">
+  <nav class="hamburger">
+    <ul>
+      <li v-for="(item, index) in storage">
+        <button class="button button--danger js--remove-storage" :data-item="index">&times;</button>
+        <a class="js--load-war" href="javascript:;" :data-item="index">{{ item.date | unixToLocale}} -
+          {{ item.results[1].result.response.enemyClan.title }}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <section v-if="orderedAllies.length">
+    <h1 v-if="orderedAllies.length">{{ map.ourSlots[1].user.clanTitle }} VS. {{ map.enemyClan.title }}</h1>
+
+    <div class="row">
+      <div class="col col-3">
+        <h4>HEROES - Allies</h4>
+        <div class="team team--hero ally-team js-ally-hero" :data-name="ally.user.name" :data-power="ally.power"
+          v-if="ally.location.type == 'Hero' && ally.user.name != 'Empty'" v-for="ally in orderedAllies">
+          <input name="attack_first" type="checkbox" />
+          <input name="attack_second" type="checkbox" />
+          <img v-for="character in ally.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
+          <div class="team__details">
+            {{ ally.user.name }} - {{ ally.power | formatNumber }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-3">
+        <h4>HEROES - Enemies</h4>
+        <label class="team team--hero enemy-team js-enemy-hero" :data-name="enemy.user.name" :data-power="enemy.power"
+          v-if="enemy.location.type == 'Hero' && enemy.user.name != 'Empty'" v-for="enemy in orderedEnemies">
+          <input type="checkbox" />
+          <img v-for="character in enemy.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
+          <div class="team__details">
+            <span class="team__location">{{ enemy.location.name }}</span>
+            {{ enemy.user.name }} - {{ enemy.power | formatNumber }}
+          </div>
+        </label>
+      </div>
+
+      <div class="col col-3">
+        <h4>Titans - Allies</h4>
+        <div class="team team--titan ally-team js-ally-titan" :data-name="ally.user.name" :data-power="ally.power"
+          v-if="ally.location.type == 'Titan' && ally.user.name != 'Empty'" v-for="ally in orderedAllies">
+          <input name="attack_first" type="checkbox" />
+          <input name="attack_second" type="checkbox" />
+          <img v-for="character in ally.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
+          <div class="team__details">
+            {{ ally.user.name }} - {{ ally.power | formatNumber }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-3">
+        <h4>Titans - Enemies</h4>
+        <label class="team team--titan enemy-team js-enemy-titan" :data-name="enemy.user.name" :data-power="enemy.power"
+          v-if="enemy.location.type == 'Titan' && enemy.user.name != 'Empty'" v-for="enemy in orderedEnemies">
+          <input type="checkbox" />
+          <img v-for="character in enemy.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
+          <div class="team__details">
+            <span class="team__location">{{ enemy.location.name }}</span>
+            {{ enemy.user.name }} - {{ enemy.power | formatNumber }}
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-3">
+        <h4>Allies Stats</h4>
+        Allies Hero Power: <strong>{{ getAllyPower.heroPower | formatNumber }}</strong> <br />
+        Allies Titan Power: <strong>{{ getAllyPower.titanPower | formatNumber }}</strong> <br />
+        Allies Total Power: <strong>{{ getAllyPower.totalPower | formatNumber }}</strong> <br />
+      </div>
+      <div class="col col-3">
+        <h4>Enemy Stats</h4>
+        Enemy Hero Power: <strong>{{ getEnemyPower.heroPower | formatNumber }}</strong> <br />
+        Enemy Titan Power: <strong>{{ getEnemyPower.titanPower | formatNumber }}</strong> <br />
+        Enemy Total Power: <strong>{{ getEnemyPower.totalPower | formatNumber }}</strong> <br />
+      </div>
+    </div>
+  </section>
+</div>
+{% endraw %}

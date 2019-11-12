@@ -1,0 +1,30 @@
+.hamburger {
+  position: fixed;
+  background: #fff;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  overflow: auto;
+  border-right: 1px solid #E1E1E1;
+  transform: translateX(-100%);
+  transition: transform 250ms;
+
+  &.is-active {
+    transform: translateX(0%);
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .button {
+    margin-right: 8px;
+  }
+}
