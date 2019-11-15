@@ -25,6 +25,7 @@ layout: default
           <input name="attack_second" type="checkbox" />
           <img v-for="character in ally.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
           <div class="team__details">
+            <span class="team__location">{{ ally.location.name }}</span>
             {{ ally.user.name }} - {{ ally.power | formatNumber }}
           </div>
         </div>
@@ -51,6 +52,7 @@ layout: default
           <input name="attack_second" type="checkbox" />
           <img v-for="character in ally.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
           <div class="team__details">
+            <span class="team__location">{{ ally.location.name }}</span>
             {{ ally.user.name }} - {{ ally.power | formatNumber }}
           </div>
         </div>
