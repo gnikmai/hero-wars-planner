@@ -4,7 +4,13 @@ $('#dataform').on('submit', function (e) {
 
   var warData = JSON.parse( $.trim( $('#data').val() ) );
 
-  if( warData.results && warData.results[1] && warData.results[1].result && warData.results[1].result.response ) {
+  if( warData.results && 
+      warData.results[0] &&
+      warData.results[0].ident == "body" &&
+      warData.results[1] && 
+      warData.results[1].ident == "clanWarGetInfo" && 
+      warData.results[1].result && 
+      warData.results[1].result.response ) {
     initApp(warData, 'withSave', warData);
   };
 });

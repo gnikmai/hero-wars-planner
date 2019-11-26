@@ -23,7 +23,7 @@ layout: default
           v-if="ally.location.type == 'Hero' && ally.user.name != 'Empty'" v-for="ally in orderedAllies">
           <input name="attack_first" type="checkbox" />
           <input name="attack_second" type="checkbox" />
-          <img v-for="character in ally.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
+          <img v-if="character.state.maxHp != -1" v-for="character in ally.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ ally.location.name }}</span>
             {{ ally.user.name }} - {{ ally.power | formatNumber }}
@@ -36,7 +36,7 @@ layout: default
         <label class="team team--hero enemy-team js-enemy-hero" :data-name="enemy.user.name" :data-power="enemy.power"
           v-if="enemy.location.type == 'Hero' && enemy.user.name != 'Empty'" v-for="enemy in orderedEnemies">
           <input type="checkbox" />
-          <img v-for="character in enemy.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
+          <img v-if="character.state.maxHp != -1" v-for="character in enemy.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ enemy.location.name }}</span>
             {{ enemy.user.name }} - {{ enemy.power | formatNumber }}

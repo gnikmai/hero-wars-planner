@@ -11,6 +11,9 @@
       <br />
       <input type="submit" value="Submit" class="button" />
       <input type="reset" value="Reset" class="button" />
+      <a href="#" class="button button--danger"
+      onClick="(function(){var newStorage=JSON.parse(localStorage.getItem('HeroWarsHistory'));newStorage.shift();localStorage.setItem('HeroWarsHistory',JSON.stringify(newStorage));})();">
+      Storage Fix</a>
     </form>
 </header>
 
