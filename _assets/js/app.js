@@ -2,20 +2,28 @@
 $('#dataform').on('submit', function (e) {
   e.preventDefault();
 
-  var warData = JSON.parse( $.trim( $('#data').val() ) );
+  var inputContent = $.trim( $('#data').val() );
 
-  if( warData.results && 
-      warData.results[0] &&
-      warData.results[0].ident == "body" &&
-      warData.results[1] && 
-      warData.results[1].ident == "clanWarGetInfo" && 
-      warData.results[1].result && 
-      warData.results[1].result.response ) {
+  if ( document.getElementById("fileUpload").files.length > 0 ) {
+    getFileContents( document.getElementById("fileUpload").files[0] );
+  }
+  else if (inputContent.length > 0) {
+    var warData = JSON.parse( inputContent );
     initApp(warData, 'withSave', warData);
-  };
+  }
 });
 
 function initApp (data, callback, callbackData) {
+  if( !data.results || 
+      !data.results[0] ||
+      !data.results[0].ident == "body" ||
+      !data.results[1] || 
+      !data.results[1].ident == "clanWarGetInfo" ||
+      !data.results[1].result ||
+      !data.results[1].result.response ) {
+    return false;
+  }
+
   console.log(data)
   var mapData = data.results[1].result.response;
 
