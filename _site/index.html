@@ -29,13 +29,15 @@
     <form id="dataform" class="form">
       <h3>Add War</h3>
       <textarea id="data"></textarea>
-      <input id="fileUpload" type="file" accept=".har" />
-      <br />
       <input type="submit" value="Submit" class="button" />
-      <input type="reset" value="Reset" class="button" />
+      <label class="button">
+        Upload File
+        <input id="fileUpload" type="file" accept=".har" />
+      </label>
+      <br />
       <a href="#" class="button button--danger"
       onClick="(function(){var newStorage=JSON.parse(localStorage.getItem('HeroWarsHistory'));newStorage.shift();localStorage.setItem('HeroWarsHistory',JSON.stringify(newStorage));})();">
-      Storage Fix</a>
+      Remove Newest Entry</a>
     </form>
 </header>
 

@@ -4,12 +4,16 @@ $('#dataform').on('submit', function (e) {
 
   var inputContent = $.trim( $('#data').val() );
 
-  if ( document.getElementById("fileUpload").files.length > 0 ) {
-    getFileContents( document.getElementById("fileUpload").files[0] );
-  }
-  else if (inputContent.length > 0) {
+  if (inputContent.length > 0) {
     var warData = JSON.parse( inputContent );
     initApp(warData, 'withSave', warData);
+  }
+});
+
+$('#fileUpload').on('change', function () {
+  var fileUploader = document.getElementById("fileUpload");
+  if ( fileUploader.files.length > 0 ) {
+    getFileContents( fileUploader.files[0] );
   }
 });
 

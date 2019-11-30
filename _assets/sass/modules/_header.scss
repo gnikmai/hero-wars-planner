@@ -34,4 +34,8 @@ header {
       margin-left: 10px;
     }
   }
+
+  [type="file"] {
+    display: none;
+  }
 }
