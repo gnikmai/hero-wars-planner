@@ -9,11 +9,12 @@
       <h3>Add War</h3>
       <textarea id="data">{{ site.testdata }}</textarea>
       <input type="submit" value="Submit" class="button" />
+      or
       <label class="button">
         Upload File
         <input id="fileUpload" type="file" accept=".har" />
       </label>
-      <br />
+      |
       <a href="#" class="button button--danger"
       onClick="(function(){var newStorage=JSON.parse(localStorage.getItem('HeroWarsHistory'));newStorage.shift();localStorage.setItem('HeroWarsHistory',JSON.stringify(newStorage));})();">
       Remove Newest Entry</a>

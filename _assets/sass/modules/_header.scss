@@ -31,7 +31,11 @@ header {
     }
 
     .button {
-      margin-left: 10px;
+      margin: 0 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
