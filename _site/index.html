@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/hero-wars-planner/assets/sass/main.css">
+    <link rel="stylesheet" href="/hero-wars-planner/assets/sass/main.css?1575154750">
 </head>
 
 <!-- / _includes/partials/head.html -->
@@ -66,8 +66,8 @@
 
     <div class="row">
       <div class="col col-3">
-        <h4>HEROES - Allies</h4>
-        <div class="team team--hero ally-team js-ally-hero" :data-name="ally.user.name" :data-power="ally.power"
+        <h4>Allied HEROES</h4>
+        <div class="team team--hero ally-team js-ally-hero" :data-id="ally.user.id" :data-power="ally.power"
           v-if="ally.location.type == 'Hero' && ally.user.name != 'Empty'" v-for="ally in orderedAllies">
           <input name="attack_first" type="checkbox" />
           <input name="attack_second" type="checkbox" />
@@ -81,8 +81,8 @@
       </div>
 
       <div class="col col-3">
-        <h4>HEROES - Enemies</h4>
-        <label class="team team--hero enemy-team js-enemy-hero" :data-name="enemy.user.name" :data-power="enemy.power"
+        <h4>Enemy HEROES</h4>
+        <label class="team team--hero enemy-team js-enemy-hero" :data-id="enemy.user.id" :data-power="enemy.power"
           v-if="enemy.location.type == 'Hero' && enemy.user.name != 'Empty'" v-for="enemy in orderedEnemies">
           <input type="checkbox" />
           <img v-if="character.type != 'pet'" v-for="character in enemy.team[0]" :src="'assets/img/Heroes/00'+ character.id + '.png'" />
@@ -95,8 +95,8 @@
       </div>
 
       <div class="col col-3">
-        <h4>Titans - Allies</h4>
-        <div class="team team--titan ally-team js-ally-titan" :data-name="ally.user.name" :data-power="ally.power"
+        <h4>Allied Titans</h4>
+        <div class="team team--titan ally-team js-ally-titan" :data-id="ally.user.id" :data-power="ally.power"
           v-if="ally.location.type == 'Titan' && ally.user.name != 'Empty'" v-for="ally in orderedAllies">
           <input name="attack_first" type="checkbox" />
           <input name="attack_second" type="checkbox" />
@@ -109,8 +109,8 @@
       </div>
 
       <div class="col col-3">
-        <h4>Titans - Enemies</h4>
-        <label class="team team--titan enemy-team js-enemy-titan" :data-name="enemy.user.name" :data-power="enemy.power"
+        <h4>Enemy Titans</h4>
+        <label class="team team--titan enemy-team js-enemy-titan" :data-id="enemy.user.id" :data-power="enemy.power"
           v-if="enemy.location.type == 'Titan' && enemy.user.name != 'Empty'" v-for="enemy in orderedEnemies">
           <input type="checkbox" />
           <img v-for="character in enemy.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
@@ -123,13 +123,13 @@
     </div>
 
     <div class="row">
-      <div class="col col-3">
-        <h4>Allies Stats</h4>
+      <div class="col col-6 align-right">
+        <h4>Allied Stats</h4>
         Allies Hero Power: <strong>{{ getAllyPower.heroPower | formatNumber }}</strong> <br />
         Allies Titan Power: <strong>{{ getAllyPower.titanPower | formatNumber }}</strong> <br />
         Allies Total Power: <strong>{{ getAllyPower.totalPower | formatNumber }}</strong> <br />
       </div>
-      <div class="col col-3">
+      <div class="col col-6">
         <h4>Enemy Stats</h4>
         Enemy Hero Power: <strong>{{ getEnemyPower.heroPower | formatNumber }}</strong> <br />
         Enemy Titan Power: <strong>{{ getEnemyPower.titanPower | formatNumber }}</strong> <br />
@@ -153,7 +153,7 @@
         <!-- _includes/partials/scripts.html -->
 
 
-  <script src="/hero-wars-planner/assets/js/main.min.js"></script>
+  <script src="/hero-wars-planner/assets/js/main.min.js?1575154750"></script>
 
 
 <!-- / _includes/partials/scripts.html -->

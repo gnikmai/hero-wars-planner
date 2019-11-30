@@ -70,9 +70,9 @@ function orderByPower(teamSlots) {
 function determineBestTeam(guild) {
   $.each($('body').find('.js-'+ guild +'-hero'), function () {
     var $t = $(this);
-    var name = $t.attr('data-name');
+    var id = $t.attr('data-id');
     var heroPower = parseInt( $t.attr('data-power') );
-    var $titanTeam = $('.js-'+ guild +'-titan[data-name="'+ name +'"]');
+    var $titanTeam = $('.js-'+ guild +'-titan[data-id="'+ id +'"]');
     var titanPower = parseInt( $titanTeam.attr('data-power') );
     var className = 'best-team';
 
@@ -94,9 +94,9 @@ function syncCheckboxes() {
   $('input[type="checkbox"]').on('change', function() {
     var $t = $(this),
         checkName = $t.attr('name'),
-        playerName = $t.parent().attr('data-name');
+        playerID = $t.parent().attr('data-id');
 
-    $('[data-name="'+ playerName +'"]')
+    $('[data-id="'+ playerID +'"]')
       .find('input[name="'+ checkName +'"]')
       .prop('checked', $t.is(':checked'));
   });
@@ -111,13 +111,13 @@ function highlightHovered() {
   $('.team').on({
     'mouseenter': function () {
       var $t = $(this),
-          name = $t.attr('data-name');
-      $('.team[data-name="'+ name +'"]').addClass('is--hover');
+          id = $t.attr('data-id');
+      $('.team[data-id="'+ id +'"]').addClass('is--hover');
     },
     'mouseleave': function () {
       var $t = $(this),
-          name = $t.attr('data-name');
-      $('.team[data-name="'+ name +'"]').removeClass('is--hover');
+          id = $t.attr('data-id');
+      $('.team[data-id="'+ id +'"]').removeClass('is--hover');
     }
   })
 }
