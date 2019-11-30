@@ -1,18 +1,22 @@
 .war {
+  h1 {
+    date {
+      display: block;
+      font-size: 16px;
+      color: $gray;
+    }
+  }
   .row {
     justify-content: center;
-  }
-
-  h4 {
-    margin-left: 8px;
   }
 
   .team {
     display: flex;
     align-items: center;
-    color: #666;
+    color: $gray;
     line-height: 1.2;
     padding: 2px 8px;
+    margin: 0 -8px;
 
     &.is--hover {
       outline: 2px solid gold;
@@ -44,7 +48,7 @@
     border-radius: 50%;
     vertical-align: middle;
     margin: 1px;
-    border: 1px solid grey;
+    border: 1px solid $gray;
     display: none;
   }
 

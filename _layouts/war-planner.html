@@ -14,7 +14,10 @@ layout: default
   </nav>
 
   <section v-if="orderedAllies.length">
-    <h1 v-if="orderedAllies.length">{{ map.ourSlots[1].user.clanTitle }} VS. {{ map.enemyClan.title }}</h1>
+    <h1 v-if="orderedAllies.length">
+      {{ map.ourSlots[1].user.clanTitle }} VS. {{ map.enemyClan.title }}
+      <date>{{ map.warDate | unixToLocale }}</date>
+    </h1>
 
     <div class="row">
       <div class="col col-3">

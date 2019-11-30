@@ -1,0 +1,20 @@
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  header,
+  [type="checkbox"] {
+    display: none;
+  }
+
+  .war .team__details {
+    margin-left: 0;
+    color: black;
+    font-weight: 400;
+  }
+}

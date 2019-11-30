@@ -32,11 +32,11 @@ function initApp (data, callback, callbackData) {
   var mapData = data.results[1].result.response;
 
   console.log('data', JSON.parse( JSON.stringify(data)) );
-
   enhanceMap(mapData.enemySlots);
   enhanceMap(mapData.ourSlots);
 
   app.map = mapData;
+  app.map.warDate = data.date;
 
   console.log('app.map', JSON.parse( JSON.stringify(mapData)) );
 
@@ -60,10 +60,8 @@ function initApp (data, callback, callbackData) {
 var app = new Vue({
   el : '#app',
   data : {
-    // the data obtained from the game
-    map: {}, //mapData,
-    // maps building names and types of data obtained from the game
-    mapSlots: mapSlots,
+    map: {}, //mapData,  the data obtained from the game
+    mapSlots: mapSlots, // maps building names and types of data obtained from the game
     storage: JSON.parse( localStorage.getItem('HeroWarsHistory') ) || []
   },
   computed: {
