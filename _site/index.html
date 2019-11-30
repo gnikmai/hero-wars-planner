@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/hero-wars-planner/assets/sass/main.css?1575154750">
+    <link rel="stylesheet" href="/hero-wars-planner/assets/sass/main.css?1575155539">
 </head>
 
 <!-- / _includes/partials/head.html -->
@@ -75,7 +75,7 @@
           <img v-if="character.type == 'pet'" v-for="character in ally.team[0]" :src="'assets/img/Pets/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ ally.location.name }}</span>
-            {{ ally.user.name }} - {{ ally.power | formatNumber }}
+            <span class="team__name">{{ ally.user.name }} - {{ ally.power | formatNumber }}</span>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@
           <img v-if="character.type == 'pet'" v-for="character in enemy.team[0]" :src="'assets/img/Pets/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ enemy.location.name }}</span>
-            {{ enemy.user.name }} - {{ enemy.power | formatNumber }}
+            <span class="team__name">{{ enemy.user.name }} - {{ enemy.power | formatNumber }}</span>
           </div>
         </label>
       </div>
@@ -103,7 +103,7 @@
           <img v-for="character in ally.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ ally.location.name }}</span>
-            {{ ally.user.name }} - {{ ally.power | formatNumber }}
+            <span class="team__name">{{ ally.user.name }} - {{ ally.power | formatNumber }}</span>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
           <img v-for="character in enemy.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ enemy.location.name }}</span>
-            {{ enemy.user.name }} - {{ enemy.power | formatNumber }}
+            <span class="team__name">{{ enemy.user.name }} - {{ enemy.power | formatNumber }}</span>
           </div>
         </label>
       </div>
@@ -153,7 +153,7 @@
         <!-- _includes/partials/scripts.html -->
 
 
-  <script src="/hero-wars-planner/assets/js/main.min.js?1575154750"></script>
+  <script src="/hero-wars-planner/assets/js/main.min.js?1575155539"></script>
 
 
 <!-- / _includes/partials/scripts.html -->

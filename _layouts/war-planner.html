@@ -30,7 +30,7 @@ layout: default
           <img v-if="character.type == 'pet'" v-for="character in ally.team[0]" :src="'assets/img/Pets/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ ally.location.name }}</span>
-            {{ ally.user.name }} - {{ ally.power | formatNumber }}
+            <span class="team__name">{{ ally.user.name }} - {{ ally.power | formatNumber }}</span>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ layout: default
           <img v-if="character.type == 'pet'" v-for="character in enemy.team[0]" :src="'assets/img/Pets/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ enemy.location.name }}</span>
-            {{ enemy.user.name }} - {{ enemy.power | formatNumber }}
+            <span class="team__name">{{ enemy.user.name }} - {{ enemy.power | formatNumber }}</span>
           </div>
         </label>
       </div>
@@ -58,7 +58,7 @@ layout: default
           <img v-for="character in ally.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ ally.location.name }}</span>
-            {{ ally.user.name }} - {{ ally.power | formatNumber }}
+            <span class="team__name">{{ ally.user.name }} - {{ ally.power | formatNumber }}</span>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ layout: default
           <img v-for="character in enemy.team[0]" :src="'assets/img/Titans/'+ character.id + '.png'" />
           <div class="team__details">
             <span class="team__location">{{ enemy.location.name }}</span>
-            {{ enemy.user.name }} - {{ enemy.power | formatNumber }}
+            <span class="team__name">{{ enemy.user.name }} - {{ enemy.power | formatNumber }}</span>
           </div>
         </label>
       </div>
